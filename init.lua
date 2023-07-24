@@ -79,7 +79,7 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim', config = true, opts = {ensure_installed={"pyright", "pylint" }}},
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -246,6 +246,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.o.relativenumber = true
+vim.o.number = true
 
 -- [[ Basic Keymaps ]]
 
